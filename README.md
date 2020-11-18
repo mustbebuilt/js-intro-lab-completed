@@ -1,2 +1,2 @@
-# Completed version of Javasscript lab
+# Completed version of Javascript lab
 
