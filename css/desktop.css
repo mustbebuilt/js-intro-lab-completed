@@ -1,0 +1,88 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+h1,
+h2 {
+  font-family: "Raleway", sans-serif;
+}
+.container {
+  margin: auto;
+  max-width: 1200px;
+  min-width: 600px;
+}
+header {
+  background-image: url(../images/top-banner-desktop.jpg);
+  height: 300px;
+  padding-left: 0;
+}
+header h1 {
+  color: #fff;
+  font-size: 4rem;
+  width: 100%;
+  text-align: left;
+  padding: 5px;
+  display: inline;
+}
+nav li a:hover {
+  color: #e8ff7f;
+  text-decoration: underline;
+}
+nav ul {
+  padding-left: 0;
+  flex-direction: row;
+}
+nav ul li {
+  display: inline;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  border-left: 1px solid #000;
+}
+nav li:first-child {
+  border-left: none;
+}
+#myTestEvent:hover {
+  cursor: pointer;
+}
+section {
+  display: flex;
+}
+section > div > p {
+  margin-right: 20px;
+}
+#msg {
+  margin-left: 40px;
+}
+form > div {
+  margin: 15px 0;
+  display: flex;
+}
+.submitBtn {
+  display: flex;
+  justify-content: flex-end;
+}
+label {
+  display: inline-block;
+  width: 120px;
+}
+input[type="text"] {
+  width: 150px;
+}
+input[type="submit"] {
+  width: 150px;
+  margin: 0;
+}
+/* Two way Exchange */
+#myFormTwoWay {
+  width: 800px;
+  display: flex;
+  justify-content: space-around;
+}
+#myFormTwoWay > div {
+  flex-basis: 40%;
+}
+#myFormTwoWay input[type="text"] {
+  width: 100%;
+}
+#myFormTwoWay > div.submitBtn {
+  flex-basis: 20%;
+  padding: 8px 20px;
+}

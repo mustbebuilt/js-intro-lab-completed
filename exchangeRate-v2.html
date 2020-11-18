@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two Way Exchange Rate Conversion</title>
+  <link rel="stylesheet" type="text/css" href="css/mobile.css">
+  <link rel="stylesheet" media="only screen and (min-width:720px)" href="css/desktop.css">
+
+</head>
+<body>
+  <div class="container">
+    <header>
+<h1 id="myHeading">Exchange Rate Calculator</h1>
+    </header>
+    <div class="main">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="exchangeRate.html">Exchange Calculator</a></li>
+          <li><a href="aboutUs.html">About Us</a></li>
+        </ul>
+      </nav>
+      <div class="content">
+        <h2>Two Way Conversion "Stretch Goal"</h2>
+        <section class="twoWay">
+        <div>
+          <form id="myFormTwoWay">
+            <div>
+              <label for="pounds">Pounds</label>
+              <input type="text" id="pounds">
+            </div>
+
+                        <div class="submitBtn">
+                          <input type="button" id="p2e" value="Pounds to Euros">
+                        </div>
+                        <div class="submitBtn">
+                          <input type="button" id="e2p" value="Euros to Pounds">
+                        </div>
+
+                        <div>
+                          <label for="pounds">Euros</label>
+                          <input type="text" id="euro">
+                        </div>
+
+          </form>
+        </div>
+        <div>
+           <p id="msg"></p>
+        </div>
+        </section>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2020 mustbebuilt
+    </footer>
+  </div>
+<script src="js/exchange-v2.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
