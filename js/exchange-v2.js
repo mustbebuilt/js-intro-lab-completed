@@ -4,7 +4,7 @@
     var msg = document.getElementById('msg');
     var conversionBtns = document.querySelectorAll("input[type=button]");
     console.dir(conversionBtns)
-    conversionBtns.forEach((button) => {
+    conversionBtns.forEach(function(button) {
     button.addEventListener('click', function(ev){
         exchange(ev.target.id)
     });
