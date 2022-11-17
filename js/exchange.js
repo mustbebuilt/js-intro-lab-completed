@@ -1,8 +1,4 @@
 (function () {
-  //
-  // let allLinks = document.querySelectorAll('nav ul li');
-  // allLinks[1].setAttribute('class', 'currentPage');
-  //
   let pricePounds;
   let exchangeRate;
   let priceEuros;
