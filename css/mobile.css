@@ -14,19 +14,27 @@ footer {
   padding: 0 15px;
 }
 header {
+  position:relative;
+  margin:0;
+  padding:0;
+}
+header h1 {
+  position:absolute;
+  top:5vh;
+  z-index: 2;
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  background: rgba(80, 80, 80, 0.5);
+  padding: 5px; 
+}
+header.noSlider {
   /* background-color: #263248; */
   background-image: url("../images/top-banner-mobile.jpg");
   height: 150px;
   background-size: cover;
-}
-header h1 {
-  color: #fff;
-  text-decoration: none;
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 5px;
 }
 nav {
   background-color: #d58b53;
@@ -57,6 +65,47 @@ nav ul li a {
 }
 .currentPage a {
   color: #000;
+}
+.slider {
+  position: relative;
+  max-width: 100% ;
+  min-width: 300px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.slides img {
+    max-width: 100%;
+      height: auto;
+}
+.dots-container {
+  display: flex;
+  justify-content: center;
+  bottom:30px;
+  width:100%;
+  /* Adjust this value based on your design */
+  position: absolute;
+  z-index: 1;
+  /* Set a higher z-index to place dots on top of images */
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 50%;
+  border:1px solid #000;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #d58b53;
 }
 #myTestEvent {
   display: inline-block;

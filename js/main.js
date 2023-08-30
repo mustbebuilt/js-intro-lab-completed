@@ -1,72 +1,84 @@
-(function () {
-  // Pre-refactored colour change code
-  // document.querySelector('nav ul li a').setAttribute('href', 'http://www.google.co.uk');
-  // document.getElementById('myTestEvent').addEventListener('click', function(){
-  //     console.info('hi');
-  // })
-  // document.querySelector(".red").addEventListener('click', function(ev){
-  //     document.querySelector('body').setAttribute('class', "redBack");
-  // })
-  // document.querySelector(".blue").addEventListener('click', function(ev){
-  //     document.querySelector('body').setAttribute('class', "blueBack");
-  // })
-  // document.querySelector(".green").addEventListener('click', function(ev){
-  //     document.querySelector('body').setAttribute('class', "greenBack");
-  // })
-  // document.querySelector(".reset").addEventListener('click', function(ev){
-  //     document.querySelector('body').removeAttribute('class');
-  // })
+(() => {
+  // Color Picker
+  const colourButtons = document.querySelectorAll(".colPicker");
 
-  // refactored code via querySelectorAll
-  let colourButtons = document.querySelectorAll(".colPicker");
-  console.dir(colourButtons);
+  const chgColour = (ev) => {
+    const colourPicked = ev.target.classList[0] + "Back";
+    const bodyElement = document.body;
+    bodyElement.className = colourPicked === "resetBack" ? "" : colourPicked;
+  };
 
-  for (let i = 0; i < colourButtons.length; i++) {
-    colourButtons[i].addEventListener("click", chgColour);
-  }
+  colourButtons.forEach((button) =>
+    button.addEventListener("click", chgColour)
+  );
 
-  function chgColour(ev) {
-    console.dir(ev.target.classList);
-    console.dir(ev.target.classList[0]);
-    let colourPicked = ev.target.classList[0] + "Back";
-    let bodyElement = document.body;
-    if (colourPicked === "resetBack") {
-      bodyElement.removeAttribute("class");
-    } else {
-      bodyElement.setAttribute("class", colourPicked);
-    }
-  }
-
-  // array for image rotator
-
-  let imageAr = [
-    "images/view1.jpg",
-    "images/view2.jpg",
-    "images/view3.jpg",
-    "images/view4.jpg",
-    "images/view5.jpg",
-    "images/view6.jpg",
+  // Image Slider
+  const images = [
+    { path: "images/banner-image-1.jpg", alt: "Silver Ball Fountains" },
+    { path: "images/banner-image-2.jpg", alt: "Winter Gardens Roof External" },
+    {
+      path: "images/banner-image-3.jpg",
+      alt: "Winter Gardens Roof Internal",
+    },
+    { path: "images/banner-image-4.jpg", alt: "Crucible Theatre" },
+    { path: "images/banner-image-5.jpg", alt: "Now Then Graffiti" },
+    { path: "images/banner-image-6.jpg", alt: "Winter Gardens Palm Trees" },
   ];
-  let counter = 0;
-  if (document.getElementById("myImages")) {
-    document.getElementById("myImages").setAttribute("src", imageAr[counter]);
-  }
-  // to automate
-  setInterval(chgImage, 2000);
-  // manually
-  //document.getElementById('myImages').addEventListener('click', chgImage);
-  function chgImage() {
-    counter++;
-    if (counter == imageAr.length) {
-      counter = 0;
-    }
-    document.getElementById("myImages").setAttribute("src", imageAr[counter]);
-  }
+  const slides = document.querySelector(".slides");
+  const dotContainer = document.querySelector(".dots-container");
+  let currentIndex = 0;
 
-  // test event
-  if (document.getElementById("myTestEvent")) {
-    document.getElementById("myTestEvent").onclick = function () {
-      console.info("hi");
-    };
-  }
+  // Create and add images to the DOM
+  images.forEach((imageData) => {
+    const img = document.createElement("img");
+    img.src = imageData.path;
+    img.alt = imageData.alt;
+    slides.appendChild(img);
+  });
+
+  const showSlide = (index) => {
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  };
+
+  const prevSlide = () => {
+    currentIndex =
+      (currentIndex - 1 + slides.children.length) % slides.children.length;
+    showSlide(currentIndex);
+  };
+
+  const nextSlide = () => {
+    currentIndex = (currentIndex + 1) % slides.children.length;
+    showSlide(currentIndex);
+    updateDots();
+  };
+
+  const autoSlide = () => {
+    nextSlide();
+  };
+
+  const createDots = () => {
+    for (let i = 0; i < slides.children.length; i++) {
+      const dot = document.createElement("div");
+      dot.className = "dot";
+      dot.addEventListener("click", () => goToSlide(i));
+      dotContainer.appendChild(dot);
+    }
+    updateDots();
+  };
+
+  const updateDots = () => {
+    const dots = document.querySelectorAll(".dot");
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === currentIndex);
+    });
+  };
+
+  const goToSlide = (index) => {
+    currentIndex = index;
+    showSlide(currentIndex);
+    updateDots();
+  };
+
+  createDots();
+  setInterval(autoSlide, 5000);
 })();
