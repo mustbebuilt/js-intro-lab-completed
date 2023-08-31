@@ -10,16 +10,14 @@
       media="only screen and (min-width:720px)"
       href="css/desktop.css"
     />
-    <script src="js/main.js" defer></script>
+    <script src="js/basicBanner.js" defer></script>
     <script src="js/navbar.js" defer></script>
   </head>
   <body>
     <div class="container">
-      <header class="slider">
+      <header class="noSlider">
         <h1 id="myHeading">My Demo Site</h1>
-        <div class="slides">
-          <!-- Add images via JS -->
-        </div>
+
         <div class="dots-container"></div>
         <!-- Container for dots -->
       </header>
@@ -33,6 +31,30 @@
         </nav>
         <div class="content">
           <h2>Lorem Ipsum</h2>
+          <div class="slider">
+            <div class="slides">
+              <img
+                src="images/banner-image-1.jpg"
+                alt="Silver Ball Fountains"
+              />
+              <img
+                src="images/banner-image-2.jpg"
+                alt="Winter Gardens Roof External"
+              />
+              <img
+                src="images/banner-image-3.jpg"
+                alt="Winter Gardens Roof Internal"
+              />
+              <img src="images/banner-image-4.jpg" alt="Crucible Theatre" />
+              <img src="images/banner-image-5.jpg" alt="Now Then Graffiti" />
+              <img
+                src="images/banner-image-6.jpg"
+                alt="Winter Gardens Palm Trees"
+              />
+            </div>
+            <button id="prevBtn">Previous</button>
+            <button id="nextBtn">Next</button>
+          </div>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum non
             illo suscipit, odio rerum laboriosam qui ea. Deleniti cum eos sint
