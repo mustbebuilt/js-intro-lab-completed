@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: helvetica, arial, sans-serif;
   font-size: 1em;
@@ -5,22 +9,26 @@ body {
   padding: 0;
   color: #000;
 }
+
 #container {
   width: 100%;
 }
+
 header,
 .content,
 footer {
   padding: 0 15px;
 }
+
 header {
-  position:relative;
-  margin:0;
-  padding:0;
+  position: relative;
+  margin: 0;
+  padding: 0;
 }
+
 header h1 {
-  position:absolute;
-  top:5vh;
+  position: absolute;
+  top: 5vh;
   z-index: 2;
   color: #fff;
   text-decoration: none;
@@ -28,17 +36,20 @@ header h1 {
   margin: 0;
   text-align: center;
   background: rgba(80, 80, 80, 0.5);
-  padding: 5px; 
+  padding: 5px;
 }
+
 header.noSlider {
   /* background-color: #263248; */
   background-image: url("../images/top-banner-mobile.jpg");
   height: 150px;
   background-size: cover;
 }
+
 nav {
   background-color: #d58b53;
 }
+
 nav ul {
   list-style: none;
   padding-left: 0;
@@ -60,15 +71,18 @@ nav ul li a {
   color: #402626;
   padding: 8px 0;
 }
+
 .currentPage {
   background-color: #f9d3b4;
 }
+
 .currentPage a {
   color: #000;
 }
+
 .slider {
   position: relative;
-  max-width: 100% ;
+  max-width: 100%;
   min-width: 300px;
   margin: auto;
   overflow: hidden;
@@ -80,14 +94,15 @@ nav ul li a {
 }
 
 .slides img {
-    max-width: 100%;
-      height: auto;
+  max-width: 100%;
+  height: auto;
 }
+
 .dots-container {
   display: flex;
   justify-content: center;
-  bottom:30px;
-  width:100%;
+  bottom: 30px;
+  width: 100%;
   /* Adjust this value based on your design */
   position: absolute;
   z-index: 1;
@@ -99,7 +114,7 @@ nav ul li a {
   height: 10px;
   background-color: #ccc;
   border-radius: 50%;
-  border:1px solid #000;
+  border: 1px solid #000;
   margin: 0 5px;
   cursor: pointer;
 }
@@ -107,6 +122,7 @@ nav ul li a {
 .active {
   background-color: #d58b53;
 }
+
 #myTestEvent {
   display: inline-block;
   padding: 5px 10px;
@@ -115,44 +131,55 @@ nav ul li a {
   color: #000;
   background-color: #1df500;
 }
+
 .colPicker {
   background-color: #fff;
   border: 1px dashed #ccc;
   padding: 2px;
   color: #000;
 }
+
 .colPicker:hover {
   cursor: pointer;
 }
+
 .redBack {
   background-color: #be1c26;
 }
+
 .greenBack {
   background-color: #398d38;
 }
+
 .blueBack {
   background-color: #163b59;
   color: #fff;
 }
+
 .error {
   color: #be1c26;
   font-weight: bold;
 }
+
 #msg {
   text-align: center;
   font-size: 1.5rem;
 }
-form > div {
+
+form>div {
   margin: 15px 0;
 }
+
 label {
   display: block;
 }
+
 input[type="text"] {
   box-sizing: border-box;
   width: 100%;
   padding: 15px;
 }
+
 input[type="submit"],
 input[type="button"] {
   margin: 10px auto;
@@ -160,6 +187,7 @@ input[type="button"] {
   width: 100%;
   padding: 15px;
 }
+
 footer {
   border-top: 1px solid #ccc;
   margin: 20px 10px 10px 0;
@@ -168,13 +196,16 @@ footer {
   text-align: center;
   font-style: italic;
 }
+
 /* Two way Exchange Stretch Goal */
 section.twoWay {
   flex-direction: column;
 }
-#myFormTwoWay > div {
+
+#myFormTwoWay>div {
   display: block;
 }
+
 #myFormTwoWay label {
   display: block;
 }
