@@ -1,10 +1,10 @@
 (() => {
   // Color Picker
   const colourButtons = document.querySelectorAll(".colPicker");
+  const bodyElement = document.body;
 
   const chgColour = (ev) => {
     const colourPicked = ev.target.classList[0] + "Back";
-    const bodyElement = document.body;
     bodyElement.className = colourPicked === "resetBack" ? "" : colourPicked;
   };
 
